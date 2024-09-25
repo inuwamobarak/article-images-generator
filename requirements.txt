@@ -1,0 +1,15 @@
+beautifulsoup4
+lxml
+nltk
+fastapi
+fastcore
+uvicorn
+pytest
+llama-cpp-python==0.2.82
+pydantic==2.8.2
+torch
+diffusers
+accelerate
+litserve
+git+https://github.com/huggingface/transformers.git
+streamlit

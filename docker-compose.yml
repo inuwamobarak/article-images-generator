@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build:
+      context: ./fastapi_app
+    container_name: fastapi
+    restart: unless-stopped
+    ports:
+      - "8000:8000"  # Expose if you want to access FastAPI directly
+    networks:
+      - app-network
+    environment:
+      - API_KEY=your_api_key
+
+  streamlit:
+    build:
+      context: ./streamlit_app
+    container_name: streamlit
+    restart: unless-stopped
+    ports:
+      - "8501:8501"  # Expose if you want to access Streamlit directly
+    networks:
+      - app-network
+    environment:
+      - FASTAPI_URL=http://fastapi:8000
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - fastapi
+      - streamlit
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
