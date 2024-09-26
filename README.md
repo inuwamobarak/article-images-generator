@@ -1,6 +1,6 @@
 # Article Image Generation API
 
-This crash project fetches an article e.g Wikipedia article, processes the article text to extract a summary, and then generates an image based on the summary using the **SegMindAPI** [Segmind SD model](https://www.segmind.com/models/sdxl1.0-txt2img) The application consists of thre main components:
+This crash project fetches an article e.g Wikipedia article, processes the article text to extract a summary, and then generates an image based on the summary using the **SegMindAPI** [Segmind SD model](https://www.segmind.com/models/sdxl1.0-txt2img) The application consists of three main components:
 
 1. **ArticleProcessor**: Handles fetching, parsing, and summarizing the article.
 2. **SegMindAPI**: Generates an image based on the article summary via the SegMind image generation API.
@@ -14,6 +14,10 @@ This crash project fetches an article e.g Wikipedia article, processes the artic
    - Add image caption to the generated image
 
 ---
+### Simikar products:
+[Socialbu](https://socialbu.com/tools/generate-blog-image)
+
+[Junia](https://www.junia.ai/tools/blog-images)
 
 ## Installation
 
