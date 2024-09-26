@@ -78,6 +78,7 @@ For example, running the script on the article [History of Poland (1945-1989)](h
 
 ## Future Enhancements
 
-- Add support for more advanced summarization techniques (e.g., using machine learning models).
+- Add support for more advanced summarization techniques to proper prompt.
+- Add support for generating article from scratch based on keywords.
 - Improve error handling and logging.
 - Expand image generation features to allow more customization of the generated images.
