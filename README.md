@@ -14,7 +14,7 @@ This crash project fetches an article e.g Wikipedia article, processes the artic
    - Add image caption to the generated image
 
 ---
-### Simikar products:
+### Similar products:
 [Socialbu](https://socialbu.com/tools/generate-blog-image)
 
 [Junia](https://www.junia.ai/tools/blog-images)
