@@ -7,11 +7,11 @@ This crash project fetches an article e.g Wikipedia article, processes the artic
 3. **BlipProcessor**: Transformer model for adding captions to the generated images.
 ## Features
 
-- Fetches Wikipedia articles and processes the content.
-- Generates summaries of the article based on sentence ranking.
-- Uses the **SegMindAPI** to generate an image from the summarized text.
-- Stores the generated image locally.
--  Adds captions to the generated images
+   - Fetch the Wikipedia article from the provided URL.
+   - Extract and preprocess the article text.
+   - Generate a summary of the article based on word frequency.
+   - Generate an image from the summary using the **SegMindAPI**.
+   - Add image caption to the generated image
 
 ---
 
@@ -47,48 +47,18 @@ This crash project fetches an article e.g Wikipedia article, processes the artic
 
 ## Usage
 
-1. **Set Up API Key:**
+**Set Up API Key:**
 
-   You'll need to provide your **SegMind API** key to generate images. Set your API key when instantiating the `SegMindAPI` class in the main script:
+   You'll need to provide your **SegMind API** key to generate images. Set your API key when instantiating the `SegMindAPI` class:
 
    ```python
    api_key = "your_api_key_here"
    segmind_api = SegMindAPI(api_key)
    ```
 
-2. **Run the Main Script:**
-
-   To fetch, summarize an article, and generate an image, run:
-
-   ```bash
-   python article_processor.py
-   ```
-
-   This will:
-
-   - Fetch the Wikipedia article from the provided URL.
-   - Extract and preprocess the article text.
-   - Generate a summary of the article based on word frequency.
-   - Generate an image from the summary using the **SegMindAPI**.
-
-3. **Generated Output:**
-
-   - The generated image will be saved as `image.png` in the project directory.
-   - The summary will be printed in the console.
-
----
-
 ## Example
 
 For example, running the script on the article [History of Poland (1945-1989)](https://en.wikipedia.org/wiki/History_of_Poland_(1945%E2%80%931989)) will produce a summary and save an image based on that summary.
-
----
-
-## Future Enhancements
-
-- Add support for more advanced summarization techniques (e.g., using machine learning models).
-- Improve error handling and logging.
-- Expand image generation features to allow more customization of the generated images.
 
 ---
 
@@ -122,3 +92,10 @@ article-images-generator/
 ├── docker-compose.yml
 └── README.md
 '''
+
+
+## Future Enhancements
+
+- Add support for more advanced summarization techniques (e.g., using machine learning models).
+- Improve error handling and logging.
+- Expand image generation features to allow more customization of the generated images.
