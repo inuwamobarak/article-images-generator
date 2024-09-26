@@ -1,3 +1,96 @@
+# Article Image Generation API
+
+This crash project fetches an article e.g Wikipedia article, processes the article text to extract a summary, and then generates an image based on the summary using the **SegMindAPI** [Segmind SD model](https://www.segmind.com/models/sdxl1.0-txt2img) The application consists of thre main components:
+
+1. **ArticleProcessor**: Handles fetching, parsing, and summarizing the article.
+2. **SegMindAPI**: Generates an image based on the article summary via the SegMind image generation API.
+3. **BlipProcessor**: Transformer model for adding captions to the generated images.
+## Features
+
+- Fetches Wikipedia articles and processes the content.
+- Generates summaries of the article based on sentence ranking.
+- Uses the **SegMindAPI** to generate an image from the summarized text.
+- Stores the generated image locally.
+-  Adds captions to the generated images
+
+---
+
+## Installation
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/article-image-gen.git
+   cd article-image-gen
+   ```
+
+2. **Install Required Python Packages:**
+
+   You can install the necessary packages using `pip`:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Download NLTK Resources:**
+
+   The NLTK library requires some additional data, which you can download using the following commands:
+
+   ```python
+   import nltk
+   nltk.download('stopwords')
+   nltk.download('wordnet')
+   nltk.download('punkt')
+   nltk.download('averaged_perceptron_tagger')
+   ```
+---
+
+## Usage
+
+1. **Set Up API Key:**
+
+   You'll need to provide your **SegMind API** key to generate images. Set your API key when instantiating the `SegMindAPI` class in the main script:
+
+   ```python
+   api_key = "your_api_key_here"
+   segmind_api = SegMindAPI(api_key)
+   ```
+
+2. **Run the Main Script:**
+
+   To fetch, summarize an article, and generate an image, run:
+
+   ```bash
+   python article_processor.py
+   ```
+
+   This will:
+
+   - Fetch the Wikipedia article from the provided URL.
+   - Extract and preprocess the article text.
+   - Generate a summary of the article based on word frequency.
+   - Generate an image from the summary using the **SegMindAPI**.
+
+3. **Generated Output:**
+
+   - The generated image will be saved as `image.png` in the project directory.
+   - The summary will be printed in the console.
+
+---
+
+## Example
+
+For example, running the script on the article [History of Poland (1945-1989)](https://en.wikipedia.org/wiki/History_of_Poland_(1945%E2%80%931989)) will produce a summary and save an image based on that summary.
+
+---
+
+## Future Enhancements
+
+- Add support for more advanced summarization techniques (e.g., using machine learning models).
+- Improve error handling and logging.
+- Expand image generation features to allow more customization of the generated images.
+
+---
 
 ## Setup
 
@@ -13,7 +106,7 @@
 4. **Test Payload: {"url": "https://en.wikipedia.org/wiki/History_of_Poland_(1945%E2%80%931989)", "num_sentences": 5, "steps": 4, "seed": 1184522, "aspect_ratio": "1:1"}**
 
 '''
-your_project/
+article-images-generator/
 ├── fastapi_app/
 │   ├── app.py
 │   ├── requirements.txt
