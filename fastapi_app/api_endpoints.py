@@ -36,7 +36,7 @@ class ArticleRequest(BaseModel):
 @app.post("/generate_image")
 async def generate_image(image_request: ImageRequest):
     try:
-        api_key = "SG_8273f7aa361a8a79"
+        api_key = "your_key_from_segmind"
         api = SegMindAPI(api_key)
         summarizer = TextSummarizer(image_request.url, image_request.num_sentences)
         summary = summarizer.summarize()
@@ -53,7 +53,7 @@ async def generate_image(image_request: ImageRequest):
 @app.post("/generate_image_caption")
 async def generate_image_caption(image_request: ImageRequest):
     try:
-        api_key = "SG_8273f7aa361a8a79"
+        api_key = "your_key_from_segmind"
         api = SegMindAPI(api_key)
         summarizer = TextSummarizer(image_request.url, image_request.num_sentences)
         summary = summarizer.summarize()
@@ -77,7 +77,7 @@ async def generate_image_caption(image_request: ImageRequest):
 async def generate_article_and_image_caption(article_request: ArticleRequest):
     num_sentences=article_request.num_sentences
     try:
-        api_key = "SG_8273f7aa361a8a79"
+        api_key = "your_key_from_segmind"
         api = SegMindAPI(api_key)
         # Generate article with llm
         article = inference.generate_article(article_request.description)
